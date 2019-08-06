@@ -1,0 +1,3 @@
+import machine_learning_implementations_with_numpy.commandline as commandline
+
+commandline.cli()
