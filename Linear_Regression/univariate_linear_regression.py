@@ -4,24 +4,17 @@ Example 1 - Single Variable Linear Regression
 NOTE: The example and sample data is being taken from the "Machine Learning course by Andrew Ng" in Coursera.
 
 Problem:
-  Suppose you are the CEO of a restaurant franchise and are considering
-  different cities for opening a new outlet. The chain already has trucks
-  in various cities and you have data for profits and populations from
-  the cities. You would like to use this data to help you select which
-  city to expand to next.
-
-  The file 'data/linear_reg/ex1data1.txt' contains the dataset for our
-  linear regression problem. The first column is the population of a city
-  and the second column is the profit of a food truck in that city.
-  A negative value for profit indicates a loss.
+  Suppose you are selling your house and you
+want to know what a good market price would be. One way to do this is to
+first collect information on recent houses sold and make a model of housing
+prices.
 """
 
+import matplotlib.pyplot as plt
 # initial imports
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
+
 plt.ion()
-import seaborn as sb
 
 from models.linear_regression import compute_cost, gradient_descent
 
@@ -29,7 +22,7 @@ from models.linear_regression import compute_cost, gradient_descent
 # ----------------Loading X and y matrix ---------------
 print('Loading data ...')
 
-data = np.loadtxt('data/linear_reg/ex1data1.txt', delimiter=',')
+data = np.loadtxt('data/ex1data1.txt', delimiter=',')
 X = data[:, 0:-1]
 y = data[:, -1:]
 m = y.shape[0]
@@ -38,11 +31,10 @@ m = y.shape[0]
 print(X[0:5])
 
 # ----------------Plotting Data-----------------
-#sb.set()
-plt.scatter(X,y, marker='x')
-#sb.lmplot(x="x",y="y",data=pd.DataFrame(data,index=(np.arange(m)).reshape([m,1]),columns=['x','y']))
+fig = plt.figure("data")
+axes1 = fig.add_subplot(1,1,1)
+axes1.scatter(X, y, marker="x")
 
-plt.show()
 # ---------------Cost and Gradient descent------------
 # adding bias units to X
 
@@ -106,8 +98,8 @@ theta0_vals, theta1_vals = np.meshgrid(theta0_vals, theta1_vals)
 from mpl_toolkits.mplot3d.axes3d import Axes3D
 from matplotlib import cm
 fig = plt.figure()
-ax = fig.add_subplot(1,1,1,projection='3d')
-ax.plot_surface(theta0_vals, theta1_vals, J_vals, rstride=2, cstride=2, lw=0,cmap=cm.jet)
+ax = fig.add_subplot(1, 1, 1, projection='3d')
+ax.plot_surface(theta0_vals, theta1_vals, J_vals, rstride=2, cstride=2, lw=0, cmap=cm.jet)
 ax.set_xlabel('theta_0')
 ax.set_ylabel('theta_1')
 
