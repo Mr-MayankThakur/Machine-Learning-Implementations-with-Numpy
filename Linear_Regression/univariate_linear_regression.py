@@ -32,8 +32,8 @@ print(X[0:5])
 
 # ----------------Plotting Data-----------------
 fig = plt.figure("data")
-axes1 = fig.add_subplot(1,1,1)
-axes1.scatter(X, y, marker="x")
+axes1 = fig.add_subplot()
+axes1.scatter(X, y, marker="x", c='r')
 
 # ---------------Cost and Gradient descent------------
 # adding bias units to X
@@ -69,7 +69,7 @@ print('Expected theta values (approx)')
 print(' [-3.6303\n  1.1664]')
 
 #---------------- plotting the linear model---------------------------
-plt.plot(X[:,1:], np.dot(X,theta))
+plt.plot(X[:,1:], np.dot(X,theta), lw=1)
 plt.show()
 
 #------------------ plotting the J(theta0,theta1)---------------------
