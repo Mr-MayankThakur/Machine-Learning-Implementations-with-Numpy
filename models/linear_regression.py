@@ -31,7 +31,8 @@ def gradient_descent(X, y, theta, alpha, num_iters):
     J_history = np.zeros([num_iters, 1])
 
     for i in range(num_iters):
-        theta -= (alpha / m) * np.dot(X.T, (np.dot(X, theta)-y));
+        theta -= (alpha/m) * X.T.dot((X.dot(theta)-y))
+        #theta -= (alpha / m) * np.dot(X.T, (np.dot(X, theta)-y))
         J_history[i] = compute_cost(X, y, theta)
 
     # theta -= (alpha/m).*(X' *((X*theta)-y));
@@ -78,7 +79,7 @@ def normal_equation(X,y):
 
     # matlab implementation -> theta = (pinv(X' * X)) * (X' * y)
 
-    theta = np.dot(np.linalg.inv(np.dot(X.T, X)), np.dot(X.T, y))
+    theta = np.dot(np.linalg.inv(X.T.dot(X)), X.T.dot(y))
 
     return theta
 
