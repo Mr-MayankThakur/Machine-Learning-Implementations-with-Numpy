@@ -67,7 +67,7 @@ def cost_function(theta, X, y, lamda=0.01, regularized=False):
     #print("Message: theta = {}".format(theta))
     h = sigmoid(X @ theta)
 
-    J = ((-y.T @ np.log(h)) - ((1-y.T) @ np.log(1-h)))/m
+    J = (-(y.T @ np.log(h)) - ((1-y.T) @ np.log(1-h)))/m
 
     if regularized:
         J = J + ((theta[1:].T @ theta[1:]) * (lamda/(2*m))) # regularization value addted to cost;
@@ -145,4 +145,3 @@ def gradient_descent(X, y, theta, alpha, num_iters):
     # theta -= (alpha/m).*(X' *((X*theta)-y));
 
     return theta, J_history
-
