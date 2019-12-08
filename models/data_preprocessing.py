@@ -54,6 +54,9 @@ def map_feature(X, degree, bias_unit=True):
     :param degree: integer
         Degree is the highest number till which you want to expand the features
 
+    :param bias_unit: bool
+        If True a Bias unit column is added to the dataset.
+
     :return: numpy array (m,>n)
         Expanded Feature matrix with more features
 
