@@ -32,16 +32,17 @@ def gradient_descent(X, y, theta, alpha, num_iters):
     # initializing some variables for future use
     m = X.shape[0]  # number of training examples
     J_history = np.zeros([num_iters, 1])
+    theta_cpy = theta.copy()
 
     for i in range(num_iters):
-        h=X.dot(theta)
-        theta -= (alpha/m) * X.T.dot((h-y))
+        h=X.dot(theta_cpy)
+        theta_cpy -= (alpha/m) * X.T.dot((h-y))
         #theta -= (alpha / m) * np.dot(X.T, (np.dot(X, theta)-y))
-        J_history[i] = compute_cost(X, y, theta)
+        J_history[i] = compute_cost(X, y, theta_cpy)
 
     # theta -= (alpha/m).*(X' *((X*theta)-y));
 
-    return theta, J_history
+    return theta_cpy, J_history
 
 
 def compute_cost(X, y, theta, lamda=0):

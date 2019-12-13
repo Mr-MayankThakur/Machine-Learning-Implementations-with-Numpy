@@ -35,8 +35,9 @@ def plot_decision_boundary(theta, X, y, hypothesis, precision=0.1, fig=None,  ax
     # initializing figure and subplot
     if (ax is None) or (fig is None):
         fig, ax = plt.subplots()
-        # Plot Data
-        #plotData(X[:, 1:2], y)
+        # plotting the data using matplotlib
+        ax.scatter(X[(y == 1).ravel(), 1], X[(y == 1).ravel(), 2], marker='+', c='r')
+        ax.scatter(X[(y == 0).ravel(), 1], X[(y == 0).ravel(), 2], marker='o', c='xkcd:light yellow', edgecolors='black')
 
     if X.shape[1] <= 2:
 
