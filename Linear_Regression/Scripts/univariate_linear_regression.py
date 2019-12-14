@@ -18,7 +18,6 @@ plt.ion()
 
 from models.linear_regression import compute_cost, gradient_descent
 
-
 # ----------------Loading X and y matrix ---------------
 print('Loading data ...')
 
@@ -56,11 +55,9 @@ J = compute_cost(X, y, np.array([[-1], [2]]))
 print('\nWith theta = [-1 ; 2]\nCost computed = {}'.format(J))
 print('Expected cost value (approx) 54.24')
 
-
-
 print('\nRunning Gradient Descent ...')
 # run gradient descent
-theta, _  = gradient_descent(X, y, theta, alpha, iterations)
+theta, _ = gradient_descent(X, y, theta, alpha, iterations)
 
 # print theta to screen
 print('Theta found by gradient descent:')
@@ -68,11 +65,11 @@ print(theta)
 print('Expected theta values (approx)')
 print(' [-3.6303\n  1.1664]')
 
-#---------------- plotting the linear model---------------------------
-plt.plot(X[:,1:], np.dot(X,theta), lw=1)
+# ---------------- plotting the linear model---------------------------
+plt.plot(X[:, 1:], np.dot(X, theta), lw=1)
 plt.show()
 
-#------------------ plotting the J(theta0,theta1)---------------------
+# ------------------ plotting the J(theta0,theta1)---------------------
 print('Visualizing J(theta_0, theta_1) ...\n')
 
 # Grid over which we will calculate J
@@ -85,25 +82,25 @@ J_vals = np.zeros([theta0_vals.size, theta1_vals.size])
 # Fill out J_vals
 for i in range(theta0_vals.size):
     for j in range(theta1_vals.size):
-        t = np.array([theta0_vals[i], theta1_vals[j]]).reshape(2,1)
-        J_vals[i,j] = compute_cost(X, y, t)
-
+        t = np.array([theta0_vals[i], theta1_vals[j]]).reshape(2, 1)
+        J_vals[i, j] = compute_cost(X, y, t)
 
 # Because of the way meshgrids work in the surf command, we need to
 # transpose J_vals before calling surf, or else the axes will be flipped
 J_vals = J_vals.T
 theta0_vals, theta1_vals = np.meshgrid(theta0_vals, theta1_vals)
 
-#--------------- Surface plot------------------
+# --------------- Surface plot------------------
 from mpl_toolkits.mplot3d.axes3d import Axes3D
 from matplotlib import cm
+
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1, projection='3d')
 ax.plot_surface(theta0_vals, theta1_vals, J_vals, rstride=2, cstride=2, lw=0, cmap=cm.jet)
 ax.set_xlabel('theta_0')
 ax.set_ylabel('theta_1')
 
-#----------------- Contour plot------------------
+# ----------------- Contour plot------------------
 
 fig1 = plt.figure()
 ax1 = fig1.add_subplot()
@@ -112,9 +109,6 @@ ax1.contour(theta0_vals, theta1_vals, J_vals, levels=np.logspace(-2, 3, 20))
 ax1.set_xlabel('theta_0')
 ax1.set_ylabel('theta_1')
 
-
 # matplotlib interactive off to view the graph at the end of program
 plt.ioff()
 plt.show()
-
-

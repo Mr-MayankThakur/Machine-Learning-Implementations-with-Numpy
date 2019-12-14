@@ -1,7 +1,0 @@
-dependencies:
-  - python=3.6
-  - numpy
-  - scipy
-  - scikit-learn
-  - pip:
-      - click>=7.0

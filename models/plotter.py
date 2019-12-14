@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot_decision_boundary(theta, X, y, hypothesis, precision=0.1, fig=None,  ax=None, feature_map=None):
+def plot_decision_boundary(theta, X, y, hypothesis, precision=0.1, fig=None, ax=None, feature_map=None):
     """
     Plots the data points X and y into a new figure with
     the decision boundary defined by theta
@@ -42,10 +42,10 @@ def plot_decision_boundary(theta, X, y, hypothesis, precision=0.1, fig=None,  ax
     if X.shape[1] <= 2:
 
         # Only need 2 points to define a line, so choose two endpoints
-        plot_x = [min(X[:, 2])-2,  max(X[:, 2])+2]
+        plot_x = [min(X[:, 2]) - 2, max(X[:, 2]) + 2]
 
         # Calculate the decision boundary line
-        plot_y = (-1/theta[2])*((theta[1]*plot_x) + theta[0])
+        plot_y = (-1 / theta[2]) * ((theta[1] * plot_x) + theta[0])
 
         # Plot, and adjust axes for better viewing
         ax.plot(plot_x, plot_y)
@@ -63,12 +63,11 @@ def plot_decision_boundary(theta, X, y, hypothesis, precision=0.1, fig=None,  ax
 
         # Evaluate z = theta*x over the grid
         # convert the grid into list of cells in grid for passing into hypothesis function
-        X = np.concatenate((np.ones((xx.shape[0]*xx.shape[1], 1)),  np.c_[xx.ravel(), yy.ravel()]), axis = 1)
+        X = np.concatenate((np.ones((xx.shape[0] * xx.shape[1], 1)), np.c_[xx.ravel(), yy.ravel()]), axis=1)
         if feature_map is not None:
-            X = feature_map[0](X[:,1:], *feature_map[1:])
+            X = feature_map[0](X[:, 1:], *feature_map[1:])
         z = hypothesis(X.dot(theta))
         z = z.reshape(xx.shape)
         # plotting the contour with only one level
         ax.contour(xx, yy, z, levels=1, colors='blue', linewidths=1)
     return fig, ax
-

@@ -17,14 +17,16 @@ Problem:
   Logistic regression problem.
 """
 
-#initial imports
+# initial imports
 
 import numpy as np
 from matplotlib import pyplot as plt
+
 plt.ion()
 from models.data_preprocessing import add_bias_unit, map_feature, feature_normalize
 from models.logistic_regression import cost_function, predict, gradient_descent, gradient_function, sigmoid
 from models.plotter import plot_decision_boundary
+
 data = np.loadtxt('data/ex2data2.txt', delimiter=',')
 X = data[:, :-1]
 y = data[:, -1, np.newaxis]
@@ -85,7 +87,6 @@ print(grad[:5])
 print('Expected gradients (approx) - first five values only:')
 print('0.0085\n 0.0188\n 0.0001\n 0.0503\n 0.0115\n')
 
-
 test_theta = np.ones([X.shape[1], 1])
 cost = cost_function(test_theta, X, y, lamda=10, regularized=True)
 grad = gradient_function(test_theta, X, y, lamda=10, regularized=True)
@@ -96,9 +97,9 @@ print('Gradient at test theta - first five values only: {}'.format(grad[:5]))
 print('Expected gradients (approx) - first five values only:')
 print(' 0.3460\n 0.1614\n 0.1948\n 0.2269\n 0.0922\n')
 
-
 # =========== Performing gradient descent================
 from models.data_preprocessing import feature_normalize
+
 X_norm, mu, sigma = feature_normalize(X[:, 1:])
 X_norm = add_bias_unit(X_norm)
 
@@ -114,7 +115,6 @@ def theta_store(value, *args):
 initial_theta = np.zeros(n)
 op_result = minimize(fun=cost_function, x0=initial_theta, jac=gradient_function, args=(X, y, 1, True), method='tnc', callback=theta_store)
 
-
 print('Cost at theta found by Gradient descent: {}'.format(op_result.fun))
 print('theta: {}'.format(op_result.x))
 
@@ -127,7 +127,7 @@ ax1.plot(range(J_history.size), J_history)
 ax1.set_xlabel('Iterations')
 ax1.set_ylabel('Cost')
 
-theta = op_result.x[:,np.newaxis]
+theta = op_result.x[:, np.newaxis]
 plot_decision_boundary(theta=theta, X=X, y=y, hypothesis=sigmoid, precision=0.1, fig=fig, ax=ax, feature_map=(map_feature, 6))
 
 # ============== Part 4: Predict and Accuracies ==============

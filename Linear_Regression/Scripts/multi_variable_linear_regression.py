@@ -21,6 +21,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from models.data_preprocessing import feature_normalize, add_bias_unit
 from models.linear_regression import gradient_descent, normal_equation
+
 plt.ion()
 
 # ----------------Loading X and y matrix ---------------
@@ -65,7 +66,7 @@ print(theta)
 
 # Estimate the price of a 1650 sq-ft, 3 br house
 
-test_data = np.array([1650,3]).reshape(1, 2)
+test_data = np.array([1650, 3]).reshape(1, 2)
 test_data, _, __ = feature_normalize(test_data, mu, sigma)
 test_data = add_bias_unit(test_data)
 price = test_data.dot(theta)
@@ -86,7 +87,6 @@ X = data[:, :-1]  # 47x2
 y = data[:, -1, None]  # 47x1
 m = y.size  # 47
 
-
 # Add intercept term to X
 X = add_bias_unit(X)
 
@@ -98,7 +98,7 @@ print('Theta computed from the normal equations: ')
 print(theta)
 
 # Estimate the price of a 1650 sq-ft, 3 br house
-test_data = np.array([1650,3]).reshape(1, 2)
+test_data = np.array([1650, 3]).reshape(1, 2)
 test_data = add_bias_unit(test_data)
 price = test_data.dot(theta)
 

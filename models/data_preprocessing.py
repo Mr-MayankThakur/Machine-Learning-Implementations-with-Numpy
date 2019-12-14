@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def feature_normalize(X, mean=None, sigma=None):
     """
     returns a normalized version of X where
@@ -22,7 +23,7 @@ def feature_normalize(X, mean=None, sigma=None):
     if sigma is None:
         sigma = X.std(0)
 
-    X_norm = (X-mean)/sigma
+    X_norm = (X - mean) / sigma
 
     return X_norm, mean, sigma
 
@@ -87,9 +88,8 @@ def map_feature(X, degree, bias_unit=True):
     # the filterfalse function returns combinations whose sum of powers is <= degree
     # the np.prod function returns an array with product of all columns
 
-    for p in filterfalse(lambda x: not (sum(x) <= degree), product(*([range(degree+1)]*n))):
-        powered_terms = X**np.array([p])
+    for p in filterfalse(lambda x: not (sum(x) <= degree), product(*([range(degree + 1)] * n))):
+        powered_terms = X ** np.array([p])
         output = np.concatenate([output, np.prod(powered_terms, axis=1).reshape(m, 1)], axis=1)
 
     return output[:, 1:]
-

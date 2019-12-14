@@ -9,6 +9,7 @@ import numpy as np
 # importing scipy.optimize.minimize for training linear regression
 from scipy.optimize import minimize
 
+
 def gradient_descent(X, y, theta, alpha, num_iters):
     """
     gradient_descent performs gradient descent on the data to learn thetas.
@@ -35,9 +36,9 @@ def gradient_descent(X, y, theta, alpha, num_iters):
     theta_cpy = theta.copy()
 
     for i in range(num_iters):
-        h=X.dot(theta_cpy)
-        theta_cpy -= (alpha/m) * X.T.dot((h-y))
-        #theta -= (alpha / m) * np.dot(X.T, (np.dot(X, theta)-y))
+        h = X.dot(theta_cpy)
+        theta_cpy -= (alpha / m) * X.T.dot((h - y))
+        # theta -= (alpha / m) * np.dot(X.T, (np.dot(X, theta)-y))
         J_history[i] = compute_cost(X, y, theta_cpy)
 
     # theta -= (alpha/m).*(X' *((X*theta)-y));
@@ -68,9 +69,9 @@ def compute_cost(X, y, theta, lamda=0):
 
     predictions = np.dot(X, theta)  # h(X)
 
-    J = np.dot((predictions - y).T, (predictions - y))/(2*m)  # cost over the training data
+    J = np.dot((predictions - y).T, (predictions - y)) / (2 * m)  # cost over the training data
     if lamda:
-        J += (lamda/(2*m)) * np.sum(np.square(theta[1:, :]))
+        J += (lamda / (2 * m)) * np.sum(np.square(theta[1:, :]))
 
     return J.ravel()
 
@@ -97,13 +98,13 @@ def compute_gradient(X, y, theta, lamda=0):
         y = y[:, np.newaxis]
 
     h = np.array(X @ theta)
-    grad = (1/m) * (X.T @ (h-y))
+    grad = (1 / m) * (X.T @ (h - y))
     if lamda:
-        grad[1:] += (lamda/m) * theta[1:]
+        grad[1:] += (lamda / m) * theta[1:]
     return grad
 
 
-def normal_equation(X,y):
+def normal_equation(X, y):
     """
     Computes the closed-form solution to linear
     regression using the normal equations.
@@ -164,4 +165,3 @@ def validation_curve(X, y, X_val, y_val, lamda_vec=None, method="TNC"):
         error_val.append(compute_cost(X_val, y_val, temp_result.x, 0))
 
     return lamda_vec, error_train, error_val
-

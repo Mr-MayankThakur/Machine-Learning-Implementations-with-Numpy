@@ -9,7 +9,7 @@ def sigmoid(z):
     :return: numpy matrix same as size of z
         sigmoid values of z
     """
-    g = 1.0/(np.exp(-1*z)+1)
+    g = 1.0 / (np.exp(-1 * z) + 1)
     return g
 
 
@@ -64,13 +64,13 @@ def cost_function(theta, X, y, lamda=0.01, regularized=False):
     if type(theta) != type(np.array([])):
         theta = np.array(theta).reshape([-1, 1])
     # since in regularization we do not penalize theta(0)
-    #print("Message: theta = {}".format(theta))
+    # print("Message: theta = {}".format(theta))
     h = sigmoid(X @ theta)
 
-    J = (-(y.T @ np.log(h)) - ((1-y.T) @ np.log(1-h)))/m
+    J = (-(y.T @ np.log(h)) - ((1 - y.T) @ np.log(1 - h))) / m
 
     if regularized:
-        J = J + ((theta[1:].T @ theta[1:]) * (lamda/(2*m))) # regularization value addted to cost;
+        J = J + ((theta[1:].T @ theta[1:]) * (lamda / (2 * m)))  # regularization value addted to cost;
         # note we didn't add regularization for first theta
 
     return J
@@ -103,7 +103,7 @@ def gradient_function(theta, X, y, lamda=0.01, regularized=False):
     # since in regularization we do not penalize theta(0)
     h = sigmoid(X.dot(theta))
 
-    grad = (1/m) * (X.T.dot(h-y))
+    grad = (1 / m) * (X.T.dot(h - y))
 
     if regularized:
         # note we didn't add regularization for first theta

@@ -17,14 +17,16 @@ Problem:
   Logistic regression problem.
 """
 
-#initial imports
+# initial imports
 
 import numpy as np
 from matplotlib import pyplot as plt
+
 plt.ion()
 from models.data_preprocessing import add_bias_unit, map_feature, feature_normalize
 from models.logistic_regression import cost_function, predict, gradient_descent, gradient_function, sigmoid
 from models.plotter import plot_decision_boundary
+
 data = np.loadtxt('data/ex2data1.txt', delimiter=',')
 X = data[:, :-1]
 y = data[:, -1, np.newaxis]
@@ -63,14 +65,12 @@ ax.set_ylabel('Exam 2 score')
 # Specified in plot order
 ax.legend(['Admitted', 'Not admitted'])
 
-
 # ============ Part 2: Compute Cost and Gradient ============
 # initial sizes
 m, n = X.shape
 
 # adding bias unit
 X = add_bias_unit(X)
-
 
 # Initialize fitting parameters
 initial_theta = np.zeros([n + 1, 1])
@@ -84,15 +84,14 @@ print('Gradient at initial theta (zeros): ')
 print(grad)
 print('Expected gradients (approx):\n -0.1000\n -12.0092\n -11.2628\n')
 
-
 # =========== Performing gradient descent================
-#from models.data_preprocessing import feature_normalize
+# from models.data_preprocessing import feature_normalize
 X_norm, mu, sigma = feature_normalize(X[:, 1:])
 X_norm = add_bias_unit(X_norm)
 
 from scipy.optimize import minimize
 
-#theta_history = np.array([]).reshape([0, n+1])
+# theta_history = np.array([]).reshape([0, n+1])
 theta_history = []
 
 
@@ -100,11 +99,10 @@ def cg(abc, *args):
     theta_history.append(abc)
 
 
-initial_theta = np.zeros(n+1)
+initial_theta = np.zeros(n + 1)
 op_result = minimize(fun=cost_function, x0=initial_theta, jac=gradient_function, args=(X, y, 0.01, False), method='cg', callback=cg)
 
-
-#cost = cost_function(op_result.x,X,y, regularized=False)
+# cost = cost_function(op_result.x,X,y, regularized=False)
 print('Cost at theta found by Gradient descent: {}'.format(op_result.fun))
 print('Expected cost (approx): 0.203')
 print('theta: {}'.format(op_result.x))
@@ -120,8 +118,8 @@ ax1.plot(range(J_history.size), J_history)
 ax1.set_xlabel('Iterations')
 ax1.set_ylabel('Cost')
 
-theta = op_result.x[:,np.newaxis]
-plot_decision_boundary(theta, X, y, sigmoid, 0.1,fig, ax)
+theta = op_result.x[:, np.newaxis]
+plot_decision_boundary(theta, X, y, sigmoid, 0.1, fig, ax)
 
 # ============== Part 4: Predict and Accuracies ==============
 #  After learning the parameters, we are going to use it to predict the outcomes
@@ -140,12 +138,10 @@ print('For a student with scores 45 and 85, we predict an admission probability 
 print('Expected value: 0.775 +/- 0.002')
 
 # Compute accuracy on our training set
-p = predict(X,theta)
+p = predict(X, theta)
 
 print('Train Accuracy: {}'.format(np.mean(p == y) * 100))
 print('Expected accuracy (approx): 89.0\n')
-
-
 
 # ===============End================
 plt.ioff()

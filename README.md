@@ -1,5 +1,7 @@
 Machine Learning Implementations with Numpy
 ===========================================
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 This project contains basic implementations of machine learning models using numpy and scipy's minimize function.
 
 Project structure
@@ -31,4 +33,17 @@ Execute these steps from an Anaconda prompt to get started with this project::
 
 Example Notebooks
 -----------------
-<a href="#">abc</a>
+<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
+
+
+
+Dependency
+==========
+
+  * numpy
+  * matplotlib
+  * scipy
+  * seaborn
+
+Tested on Ubuntu 18.04 LTS.
+
