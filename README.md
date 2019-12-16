@@ -6,26 +6,30 @@ This project contains basic implementations of machine learning models using num
 
 Project structure
 -----------------
-:: 
 
     ├── models      <- The folder containing basic functions implemented in numpy for the project.
-    │   │
-    │   ├── data_preprocessing.py   <- The functions used to prepare/modify the training data.
-    │   ├── linear_regression.py    <- The functions used to train and analyse the linear regression model.
-    │   ├── logistic_regression.py  <- The functions used to train and analyse the logistic regression model.
-    │   └── neural_network.py       <- The functions used to train and analyse the neural network model.
+    │ │
+    │ ├── data_preprocessing.py   <- The functions used to prepare/modify the training data.
+    │ ├── linear_regression.py    <- The functions used to train and analyse the linear regression model.
+    │ ├── logistic_regression.py  <- The functions used to train and analyse the logistic regression model.
+    │ └── neural_network.py       <- The functions used to train and analyse the neural network model.
     │
-    ├── Linear Regression       <- The folder containing example jupyter notebooks and scripts for linear regression.
+    ├─ Linear Regression    <- The folder containing jupyter notebooks and scripts for linear regression.
     │
-    ├── Logistic Regression     <- The folder containing example jupyter notebooks and scripts for logistic regression.
+    ├─ Logistic Regression  <- The folder containing jupyter notebooks and scripts for logistic regression.
     │
-    ├── Neural Networks         <- The folder containing example jupyter notebooks and scripts for neural networks.
+    ├─ Neural Networks      <- The folder containing jupyter notebooks and scripts for neural networks.
     │
-    ├── requirements.txt   <- The pip requirement file for the project
-    └── README.rst         <- The readme file for the project, explaining the basics to new developers
+    ├─ requirements.txt   <- The pip requirement file for the project
+    └─ README.rst         <- The readme file for the project, explaining the basics to new developers
 
 Getting started
 ---------------
+
+#### Method 1: Online Binder
+You could easily run the whole repository in mybinder.org or [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy.git/master).
+
+#### Method 2: Offline
 Execute these steps from an Anaconda prompt to get started with this project::
 
     conda env create -f environment.yml -n machine_learning_implementations_with_numpy
@@ -33,6 +37,14 @@ Execute these steps from an Anaconda prompt to get started with this project::
 
 Example Notebooks
 -----------------
+<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
+<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
+<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
+<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
+<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
+<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
+<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
+<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
 <a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
 
 
