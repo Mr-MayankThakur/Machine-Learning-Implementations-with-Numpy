@@ -1,6 +1,9 @@
-Machine Learning Implementations with Numpy
-===========================================
+# Machine Learning Implementations with Numpy
+![GitHub repo size](https://img.shields.io/github/repo-size/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy)
+[![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg)](https://www.latex-project.org/)
+
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 
 This project contains basic implementations of machine learning models using numpy and scipy's minimize function.
 
@@ -26,10 +29,12 @@ Project structure
 Getting started
 ---------------
 
-#### Method 1: Online Binder
-You could easily run the whole repository in mybinder.org or [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy.git/master).
+###Installation / Usage
+The .ipynb files, which are the core of this repository, are interactive Jupyter Notebooks. You can directly use a static, rendered version of the notebook by clicking on it. GitHub has an implemented notebook-viewer.
+Further you can inspect notebooks on NBviewer by following the links above.
 
-#### Method 2: Offline
+However, for working interactively with the notebooks (recommended), you either have to install Python + Jupyter (e.g. by using Anaconda), clone the repository and start a server. Or start them in an online, interactive environment, such as Binder (see below).
+### Method 2: Offline
 Execute these steps from an Anaconda prompt to get started with this project::
 
     conda env create -f environment.yml -n machine_learning_implementations_with_numpy
@@ -38,15 +43,28 @@ Execute these steps from an Anaconda prompt to get started with this project::
 Example Notebooks
 -----------------
 <a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
-<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
-<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
-<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
-<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
-<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
-<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
-<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
-<a href="Linear_Regression\Univariate Linear Regression.ipynb">Univariate Linear Regression</a>
+[![](https://img.shields.io/badge/open%20with-nbviewer-green)](https://nbviewer.jupyter.org/github/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy/blob/master/Linear_Regression/Univariate%20Linear%20Regression.ipynb)
 
+<a href="Linear_Regression\Multi-Variable Linear Regression.ipynb">Multi-Variable Linear Regression</a>
+[![](https://img.shields.io/badge/open%20with-nbviewer-green)](https://nbviewer.jupyter.org/github/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy/blob/master/Linear_Regression/Multi-Variable%20Linear%20Regression.ipynb)
+
+<a href="Logistic_Regression\Logistic Regression (without regularization).ipynb">Logistic Regression (without regularization)</a>
+[![](https://img.shields.io/badge/open%20with-nbviewer-green)](https://nbviewer.jupyter.org/github/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy/blob/master/Logistic_Regression/Logistic%20Regression%20%28without%20regularization%29.ipynb)
+
+<a href="Logistic_Regression\Logistic Regression (with regularization).ipynb">Logistic Regression (with regularization)</a>
+[![](https://img.shields.io/badge/open%20with-nbviewer-green)](https://nbviewer.jupyter.org/github/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy/blob/master/Logistic_Regression/Logistic%20Regression%20%28with%20regularization%29.ipynb)
+
+<a href="Logistic_Regression\Multi-Class Classification.ipynb">Multi-Class Classification</a>
+[![](https://img.shields.io/badge/open%20with-nbviewer-green)](https://nbviewer.jupyter.org/github/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy/blob/master/Logistic_Regression/Multi-Class%20Classification.ipynb)
+
+<a href="Model Performance Evaluation/Regularized Linear Regression and Bias vs Variance.ipynb">Regularized Linear Regression and Bias vs Variance</a>
+[![](https://img.shields.io/badge/open%20with-nbviewer-green)](https://nbviewer.jupyter.org/github/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy/blob/master/Model%20Performance%20Evaluation/Regularized%20Linear%20Regression%20and%20Bias%20vs%20Variance.ipynb)
+
+<a href="Neural Networks/neural_network_feed_forwarding.ipynb">Neural Network Feed Forwarding</a>
+[![](https://img.shields.io/badge/open%20with-nbviewer-green)](https://nbviewer.jupyter.org/github/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy/blob/master/Neural%20Networks/neural_network_feed_forwarding.ipynb)
+
+<a href="Neural Networks/neural_network_complete.ipynb">Neural Network Complete</a>
+[![](https://img.shields.io/badge/open%20with-nbviewer-green)](https://nbviewer.jupyter.org/github/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy/blob/master/Neural%20Networks/neural_network_complete.ipynb)
 
 
 Dependency
@@ -59,3 +77,25 @@ Dependency
 
 Tested on Ubuntu 18.04 LTS.
 
+License
+=======
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Maintainers
+
+[@MayankThakur](https://github.com/RMr-MayankThakur).
+
+## Contributing
+
+Feel free to dive in! [Open an issue](https://github.com/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy/issues/new/choose) or submit PRs.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
