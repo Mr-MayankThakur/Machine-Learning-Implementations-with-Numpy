@@ -29,7 +29,7 @@ Project structure
 Getting started
 ---------------
 
-###Installation / Usage
+### Installation / Usage
 The .ipynb files, which are the core of this repository, are interactive Jupyter Notebooks. You can directly use a static, rendered version of the notebook by clicking on it. GitHub has an implemented notebook-viewer.
 Further you can inspect notebooks on NBviewer by following the links above.
 
@@ -83,8 +83,7 @@ License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Maintainers
-
-[@MayankThakur](https://github.com/RMr-MayankThakur).
+[@MayankThakur](https://github.com/Mr-MayankThakur).
 
 ## Contributing
 
@@ -92,7 +91,7 @@ Feel free to dive in! [Open an issue](https://github.com/Mr-MayankThakur/Machine
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
