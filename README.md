@@ -78,11 +78,6 @@ Dependency
 
 Tested on Ubuntu 18.04 LTS.
 
-License
-=======
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 ## Maintainers
 [@MayankThakur](https://github.com/Mr-MayankThakur).
 
@@ -91,6 +86,8 @@ License
 Feel free to dive in! [Open an issue](https://github.com/Mr-MayankThakur/Machine-Learning-Implementations-with-Numpy/issues/new/choose) or submit PRs.
 
 ## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
