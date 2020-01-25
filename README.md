@@ -5,7 +5,7 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 
-It is crucial to how we could implement the machine learning formulas and methods in computers. Matrices are the special tools perfect for this task. This project contains basic implementations of machine learning models using numpy and scipy's minimize function. 
+It is crucial to know how we could implement the machine learning formulas and methods in computers. Numpy matrices are the special tools perfect for this task. This project contains basic implementations of machine learning models using numpy and scipy's minimize function. 
 
 Project structure
 -----------------
